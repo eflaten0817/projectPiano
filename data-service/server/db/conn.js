@@ -13,8 +13,8 @@ module.exports = {
       if (err || !db) {
         return callback(err);
       }
-
-      dbConnection = db.db('sample_airbnb');
+      console.log(db);
+      dbConnection = db.db('piano_data');
       console.log('Successfully connected to MongoDB.');
 
       return callback();

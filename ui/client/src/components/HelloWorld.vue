@@ -5,6 +5,8 @@
 </template>
 
 <script>
+  import { getAllworks } from '../../api/pianoWorks';
+
   export default {
     name: 'HelloWorld',
 
@@ -60,5 +62,12 @@
         },
       ],
     }),
+    async created() {
+      console.log('hello world');
+      const works = await getAllworks();
+      console.log(works);
+      return true;
+    },
   }
+  
 </script>

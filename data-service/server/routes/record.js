@@ -13,7 +13,7 @@ recordRoutes.route('/listings').get(async function (_req, res) {
   const dbConnect = dbo.getDb();
 
   dbConnect
-    .collection('listingsAndReviews')
+    .collection('initial_data')
     .find({})
     .limit(50)
     .toArray(function (err, result) {
@@ -36,7 +36,7 @@ recordRoutes.route('/listings/recordSwipe').post(function (req, res) {
   };
 
   dbConnect
-    .collection('matches')
+    .collection('initial_data')
     .insertOne(matchDocument, function (err, result) {
       if (err) {
         res.status(400).send('Error inserting matches!');
@@ -58,7 +58,7 @@ recordRoutes.route('/listings/updateLike').post(function (req, res) {
   };
 
   dbConnect
-    .collection('listingsAndReviews')
+    .collection('piano_data')
     .updateOne(listingQuery, updates, function (err, _result) {
       if (err) {
         res
@@ -76,7 +76,7 @@ recordRoutes.route('/listings/delete/:id').delete((req, res) => {
   const listingQuery = { listing_id: req.body.id };
 
   dbConnect
-    .collection('listingsAndReviews')
+    .collection('initial_data')
     .deleteOne(listingQuery, function (err, _result) {
       if (err) {
         res

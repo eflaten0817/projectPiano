@@ -15,7 +15,7 @@ recordRoutes.route('/listings').get(async function (_req, res) {
   dbConnect
     .collection('initial_data')
     .find({})
-    .limit(50)
+    .limit(1000)
     .toArray(function (err, result) {
       if (err) {
         res.status(400).send('Error fetching listings!');

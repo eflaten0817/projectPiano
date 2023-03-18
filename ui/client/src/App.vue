@@ -14,18 +14,21 @@
 
     <v-main>
       <HelloWorld/>
+      <v-spacer />
+      <Profile />
     </v-main>
   </v-app>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld';
-
+import Profile from './components/Profile.vue';
 export default {
   name: 'App',
 
   components: {
     HelloWorld,
+    Profile,
   },
 
   data: () => ({
